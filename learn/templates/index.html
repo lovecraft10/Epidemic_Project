@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的页面</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<h1>疫情追踪</h1>
+<h2>实时疫情</h2>
+<button> 点我有惊喜 </button>
+<script>
+    $('button').click(function(){
+        $.ajax({
+            url:'/ajax',
+            type:'post',
+            data:{'张三':'aaaa', '李四':'bbbb'},
+            success:function(d){
+                $('h1').html('武汉加油'+d)
+            },
+            error:function(){
+                alert('发送请求ajax失败')
+            }
+        })
+    })
+</script>
+</body>
+</html>
