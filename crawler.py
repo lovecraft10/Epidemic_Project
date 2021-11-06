@@ -88,7 +88,8 @@ def con():
                             user='Coisini',
                             password='Wxylkxy0415.@',
                             db='Cov',
-                            charset='utf8')
+                            charset='utf8'
+                           )
     return conn
 
 def close_conn(conn):
@@ -96,7 +97,7 @@ def close_conn(conn):
 
 def update_details(data, conn):
     try:
-        li = data  # 0是历史数据，1是当日详细数据
+        li = data
         cursor = conn.cursor()
         sql = "insert into details(update_time,province,city,confirm,confirm_add,heal,dead) values(%s,%s,%s,%s,%s,%s,%s)"
         sql_query = "select %s=(select update_time from details order by id desc limit 1)"  # 对比当前最大时间戳
@@ -146,8 +147,10 @@ def update_information(data_dic, conn):
 def empty():
     conn = con()
     cursor = conn.cursor()
-    sql = 'TRUNCATE guonei_dynamic;'
-    cursor.execute(sql)
+    sql1 = 'TRUNCATE guonei_dynamic;'
+    cursor.execute(sql1)
+    sql2 = 'TRUNCATE history;'
+    cursor.execute(sql2)
     conn.commit()
     close_conn(conn)
 
