@@ -55,7 +55,6 @@ def get_c1_data():
     res_tuple = tuple(res_list)
     return res_tuple
 
-
 def get_c2_data():
     # 因为会更新多次数据，取时间戳最新的那组数据
     sql = "select province,sum(confirm) from details " \
@@ -65,13 +64,35 @@ def get_c2_data():
     res = query(sql)
     return res
 
+def get_l1_data():
+  sql = "select ds,confirm,suspect,heal,dead from history"
+  res = query(sql)
+  return res
+
+def get_l2_data():
+  sql = "select ds,confirm_add,suspect_add from history"
+  res = query(sql)
+  return res
+
+
+
+def get_r1_data():
+    day = time.localtime().tm_yday
+    progress = (day/365)*100
+    progress = '%.2f' % progress
+    return progress
+
+#返回最近的30条热搜
+def get_r2_data():
+    sql = 'select content from guonei_dynamic order by id asc limit 30'
+    res = query(sql)
+    return res
 
 
 
 
 if __name__ == '__main__':
-    print(get_c1_data())
-
+    print(get_r2_data())
 
 
 

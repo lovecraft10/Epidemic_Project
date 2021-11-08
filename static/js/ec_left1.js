@@ -5,8 +5,8 @@ var ec_left1_Option = {
 	title: {
 		text: "全国累计趋势",
 		textStyle: {
-			// color: 'white',
-		},
+		      fontSize: 11
+		    },
 		left: 'left',
 	},
 	tooltip: {
@@ -90,5 +90,3 @@ var ec_left1_Option = {
 		data: []//[6, 9, 17]
 	}]
 };
-
-ec_left1.setOption(ec_left1_Option)

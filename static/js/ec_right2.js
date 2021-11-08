@@ -1,7 +1,5 @@
 var ec_right2 = echarts.init(document.getElementById('r2'), "dark");
 
-var ddd = [{'name': '肺炎', 'value': '12734670'}, {'name': '实时', 'value': '12734670'},
-{'name': '新型', 'value': '12734670'}]
 var ec_right2_option = {
                         // backgroundColor: '#515151',
 						title : {
@@ -45,5 +43,3 @@ var ec_right2_option = {
                                 data:  []
                             }]
                     }
-
-ec_right2.setOption(ec_right2_option);

@@ -78,5 +78,3 @@ var ec_left2_Option = {
 		data: []
 	}]
 };
-
-ec_left2.setOption(ec_left2_Option)
